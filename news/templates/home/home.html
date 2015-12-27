@@ -6,27 +6,27 @@
       <title>Nomadbase Lisbon</title>
     
     <meta name="viewport" content="width=600" />
-   
-    <link rel="stylesheet" href="http://aand.dkonto.pl/nomadbase/css/style.css"/>
+{% load staticfiles %}   
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
   </head>
 
   <body>
   <div id="wrapper">
     &nbsp;
     <div id="logo">
-      <a href="/news/home/">
+      <a href="/home/">
         <span id="Nomadbase">Nomadbase</span> <span id="Lisbon"> Lisbon</span>
       </a>
     </div>
 
     <div id="menu">
 
-      <span><a href="/news/home/">home</a></span>
-     <span> <a href="/news/values/">values</a></span>
-     <span> <a href="/news/come/">come</a></span>
-     <span> <a href="/news/activity/">activity</a></span>
-     <span> <a href="/news/participate/">participate</a></span>
-     <span> <a href="/news/contact/">contact</a></span>
+      <span><a href="/home/">home</a></span>
+     <span> <a href="/values/">values</a></span>
+     <span> <a href="/come/">come</a></span>
+     <span> <a href="/activity/">activity</a></span>
+     <span> <a href="/participate/">participate</a></span>
+     <span> <a href="/contact/">contact</a></span>
 
     </div>
 
@@ -70,14 +70,16 @@
 
 </tbody></table>
 
-       {% else %}
-
-
+       {% elif type == 'home' or type == 'values' or type == 'come' or type == 'participate' or type == 'activity' %}
         {% for post in posts %}
     <div>
-        {{ post.text|linebreaks }}
+        {{ post.text|safe }}
     </div>
 {% endfor %}
+{% else %}
+<div>
+Website with this address doesn't exist. Go to the<a href="/home/"> mainpage</a>.
+</div>
 {% endif %}
 
 {% if type == 'come' %}
@@ -88,6 +90,17 @@
 <img src="http://aand.dkonto.pl/nomadbase/images/choinka.JPG" alt="choinka w pokoju" width=400 />
 {% endif %}
 
+{% if type == 'activity' %}
+<p> Coding on teh beach nearby.</p>
+<img src="http://aand.dkonto.pl/nomadbase/images/plaza.JPG" alt="beach nearby" width=500 />
+<p> Olive garden Belem</p>
+<img src="http://aand.dkonto.pl/nomadbase/images/ogrod.JPG" alt="asocial room" width=500 />
+<p> After dumpsted diving.</p>
+<img src="http://aand.dkonto.pl/nomadbase/images/lodowka.JPG" alt="fridge with dumpster dived food" width=500 />
+<p> Uploading these pictures.</p>
+<img src="http://aand.dkonto.pl/nomadbase/images/programowanie.JPG" alt="a beautiful girl writing nice code" width = 500 />
+
+{% endif %}
     
 </div>
 

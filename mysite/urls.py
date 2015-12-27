@@ -16,8 +16,10 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from news import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.intro, name='intro'),
+    url(r'^(?P<question_id>[a-zA-Z]+)/$', views.index, name='index'),
     url(r'^news/', include('news.urls')),
 ]

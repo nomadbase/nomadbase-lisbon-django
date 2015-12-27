@@ -8,5 +8,8 @@ def index(request, question_id):
     type = question_id
     return render(request, 'home/home.html', {'posts': posts,'type':type})
 
+def intro(request):
+    return render(request, 'home/intro.html')
+
 def detail(request, question_id):
     return HttpResponse("You're looking at question %s." % question_id)

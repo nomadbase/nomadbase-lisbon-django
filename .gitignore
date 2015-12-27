@@ -1,0 +1,40 @@
+# django databse access #
+#########################
+manage.py
+*/settings.py
+settings.py
+
+# File types #
+##############
+*.pyc
+*.pyo
+*.swo
+*.swp
+*.swn
+*.log
+
+# Directories #
+###############
+logs/
+bin
+develop-eggs
+dist
+downloads
+eggs
+parts
+lib
+lib64
+
+# Specific files #
+##################
+projectname/settings.py
+.installed.cfg
+src/*.egg-info
+
+# OS generated files #
+######################
+.DS_Store
+ehthumbs.db
+Icon
+Thumbs.db
+*~

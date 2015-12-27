@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    
+      <title>Nomadbase Lisbon</title>
+    
+    <meta name="viewport" content="width=600" />
+   
+    <link rel="stylesheet" href="http://aand.dkonto.pl/nomadbase/css/style.css"/>
+  </head>
+
+  <body>
+  <div id="wrapper">
+    &nbsp;
+    <div id="logo">
+      <a href="/news/home/">
+        <span id="Nomadbase">Nomadbase</span> <span id="Lisbon"> Lisbon</span>
+      </a>
+    </div>
+
+    <div id="menu">
+
+      <span><a href="/news/home/">home</a></span>
+     <span> <a href="/news/values/">values</a></span>
+     <span> <a href="/news/come/">come</a></span>
+     <span> <a href="/news/activity/">activity</a></span>
+     <span> <a href="/news/participate/">participate</a></span>
+     <span> <a href="/news/contact/">contact</a></span>
+
+    </div>
+
+    <div id="container">
+
+      <div id="content">
+       {% if type == 'contact' %}
+<table style="width:600px">
+        <tbody><tr>
+          <td>Michal:</td><td>&nbsp;</td></tr>
+        <tr>
+          <td>&nbsp;</td><td><a href="http://www.bewelcome.org/members/mrkvon" target="_blank">bewelcome profile</a></td>
+
+
+</tr>
+<tr><td>&nbsp;</td><td><a href="https://www.trustroots.org/profile/mrkvon" target="_blank">trustroots profile</a></td></tr>
+ <tr>
+          <td>&nbsp;</td><td>michal dot salajka at email dot cz</td>
+          
+
+</tr>
+        <tr>
+          <td>Agata:</td><td>&nbsp;</td></tr>
+        <tr>
+          <td>&nbsp;</td><td><a href="http://www.bewelcome.org/members/dzikudzik" target="_blank">bewelcome profile</a></td>
+
+</tr>
+<tr><td>&nbsp;</td><td><a href="https://www.trustroots.org/profile/smarkaty" target="_blank">trustroots profile</a></td></tr>
+ <tr>
+          <td>&nbsp;</td><td>agatamonikaandrzejewska at gmail dot com</td>
+          
+
+</tr>
+        <tr>
+          <td>Nomadbase Lisbon:</td><td>&nbsp;</td></tr>
+        <tr>
+          <td>&nbsp;</td><td><a href="http://www.bewelcome.org/members/nomadbase" target="_blank">bewelcome profile</a></td>
+
+</tr>
+<tr><td>&nbsp;</td><td><a href="https://www.trustroots.org/profile/nomad-base" target="_blank">trustroots profile</a></td></tr>
+
+</tbody></table>
+
+       {% else %}
+
+
+        {% for post in posts %}
+    <div>
+        {{ post.text|linebreaks }}
+    </div>
+{% endfor %}
+{% endif %}
+
+{% if type == 'come' %}
+<img src="http://aand.dkonto.pl/nomadbase/images/pokoj.JPG" alt="living room" width=400 />
+<img src="http://aand.dkonto.pl/nomadbase/images/asocial.JPG" alt="asocial room" width=400 />
+{% endif %}      
+{% if type == 'participate' %}
+<img src="http://aand.dkonto.pl/nomadbase/images/choinka.JPG" alt="choinka w pokoju" width=400 />
+{% endif %}
+
+    
+</div>
+
+</div>
+        <br />
+        <div id="mountains">
+        <div id="mountains1">&nbsp;</div><div id="mountains2">&nbsp;</div>
+        </div>
+    
+
+    
+    
+  </div>
+  </body>
+</html>
+
+
+
